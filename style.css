@@ -1,8 +1,16 @@
+:root {
+  --primary-color: #5372f0;
+  --line-color: #cacaca;
+  --icon-color: #929292;
+  --icon-hover-color: #696969;
+  --alert-color: #203caa;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppings", sans-serif;
+  font-family: 'Poppings', sans-serif;
 }
 
 body {
@@ -10,7 +18,13 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #5372f0;
+  background-color: var(--primary-color);
+  overflow: hidden;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .container {
@@ -22,9 +36,98 @@ body {
   margin: 0 25px;
 }
 
-.wrapper {
-  border: 1px solid #cacaca;
+.alert {
+  background-color: #96abff;
+  padding: 20px 40px;
+  min-width: 220px;
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 10px;
   border-radius: 5px;
+  border-left: 8px solid var(--alert-color);
+  opacity: 0;
+  pointer-events: none;
+}
+.alert.showAlert {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.alert.show {
+  animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-10%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.alert.hide {
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.alert .fa-exclamation-circle {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--alert-color);
+  font-size: 30px;
+}
+
+.alert .msg {
+  padding: 0 20px;
+  font-size: 18px;
+  color: var(--alert-color);
+}
+
+.alert .close-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #748fff;
+  padding: 22px 18px;
+}
+.close-btn:hover {
+  background-color: #5875eb;
+  cursor: pointer;
+}
+.close-btn .fa-times {
+  color: var(--alert-color);
+  font-size: 22px;
+  line-height: 40px;
+}
+
+.wrapper {
+  border: 1px solid var(--line-color);
+  border-radius: 5px;
+  position: relative;
 }
 
 .wrapper .group-lang {
@@ -38,49 +141,66 @@ body {
 .group-lang .btn-exchange {
   padding: 5px 10px;
   border-radius: 5px;
+  font-size: 16px;
   border: none;
   outline: none;
-  background-color: #5372f0;
-  color: #fff;
+  background: none;
+  color: var(--icon-color);
   cursor: pointer;
   text-transform: uppercase;
 }
 
 .group-lang .btn-exchange:hover {
-  opacity: 0.8;
+  color: var(--icon-hover-color);
 }
 
 .group-lang select {
-  border: 1px solid #cacaca;
+  border: 1px solid var(--line-color);
   outline: none;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 16px;
+  width: 100%;
 }
-.group-lang .btn-icons,
+.wrapper .icons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 16px;
+}
+
+.btn-icons,
 .icon-sound {
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
   outline: none;
-  background-color: #5372f0;
-  color: #fff;
+  color: var(--icon-color);
   cursor: pointer;
+}
+.btn-icons:hover,
+.icon-sound:hover {
+  color: var(--icon-hover-color);
 }
 
 .text-input {
   display: flex;
   justify-content: center;
-  border-top: 1px solid #cacaca;
+  border-top: 1px solid var(--line-color);
+}
+.text-input div {
+  position: relative;
 }
 
 .text-input .from-text {
-  border-right: 1px solid #cacaca;
+  border-right: 1px solid var(--line-color);
+  width: 100%;
+}
+.text-input .to-text {
   width: 100%;
 }
 
 .text-input textarea {
-  width: 100%;
   border: none;
   outline: none;
   resize: none;
@@ -96,9 +216,33 @@ body {
   border: none;
   outline: none;
   border-radius: 5px;
-  background-color: #5372f0;
+  background-color: var(--primary-color);
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .text-input {
+    flex-direction: column;
+  }
+  .text-input .from-text {
+    border-bottom: 1px solid #cacaca;
+    border-right: none;
+  }
+  .container .icons {
+    bottom: 10px;
+    right: 5px;
+  }
+  .group-lang select {
+    border: 1px solid #cacaca;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+  .wrapper .group-lang {
+    gap: 5px;
+  }
 }

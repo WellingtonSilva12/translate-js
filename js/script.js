@@ -5,6 +5,8 @@ const btnExchange = document.querySelector('.btn-exchange')
 const btnTranslate = document.querySelector('.btn-translate')
 const iconCopy = document.querySelector('.btn-icons')
 const iconSound = document.querySelector('.icon-sound')
+const alertText = document.querySelector('.alert')
+const btnClose = document.querySelector('.close-btn')
 
 selectTag.forEach((tag, id) => {
   for (const country_code in countries) {
@@ -53,7 +55,21 @@ function exchangeButton() {
 
 iconCopy.addEventListener('click', () => {
   navigator.clipboard.writeText(toText.value)
+  alertText.classList.toggle('hide')
+  alertText.classList.toggle('show')
+  alertText.classList.toggle('showAlert')
+  setTimeout(function () {
+    alertText.classList.toggle('hide')
+    alertText.classList.toggle('show')
+    alertText.classList.toggle('showAlert')
+  }, 1000)
 })
+
+btnClose.addEventListener('click', () => {
+  alertText.classList.toggle('hide')
+  alertText.classList.toggle('show')
+})
+
 iconSound.addEventListener('click', () => {
   let utterance
 
