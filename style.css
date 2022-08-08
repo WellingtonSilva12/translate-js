@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppings", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #5372f0;
+}
+
+.container {
+  max-width: 750px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 25px;
+  margin: 0 25px;
+}
+
+.wrapper {
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+}
+
+.wrapper .group-lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.group-lang .btn-exchange {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #5372f0;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.group-lang .btn-exchange:hover {
+  opacity: 0.8;
+}
+
+.group-lang select {
+  border: 1px solid #cacaca;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.group-lang .btn-icons,
+.icon-sound {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #5372f0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.text-input {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #cacaca;
+}
+
+.text-input .from-text {
+  border-right: 1px solid #cacaca;
+  width: 100%;
+}
+
+.text-input textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+.container .btn-translate {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #5372f0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
