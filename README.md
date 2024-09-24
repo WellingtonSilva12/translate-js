@@ -11,7 +11,7 @@ Este é um projeto que foi desenvolvido, usando a API MyMemory Translated, que t
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)]()
 [![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
 
-> #### 🌐 Deploy do projeto [Tradutor de Texto](https://nwell-dev.github.io/translate-js/)
+> #### 🌐 Deploy do projeto [Tradutor de Texto](https://wellingtonsilva12.github.io/translate-js/)
 
 
 
